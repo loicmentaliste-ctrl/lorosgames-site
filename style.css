@@ -1,0 +1,125 @@
+/* Loro's Games — feuille commune aux pages FR et EN. */
+:root {
+    --fond: #032f37;
+    --fond-2: #04474f;
+    --carte: #0a5560;
+    --texte: #f4efe2;
+    --doux: #b9cfcb;
+    --or: #ffc53d;
+    --rouge: #e3342f;
+    --bleu: #2f6fd6;
+    --rayon: 18px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--texte);
+    font: 17px/1.6 "Nunito", system-ui, sans-serif;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--or); }
+
+h1, h2, h3, .pixel {
+    font-family: "Pixelify Sans", "Nunito", sans-serif;
+    font-weight: 700;
+    letter-spacing: .01em;
+    line-height: 1.15;
+}
+
+.conteneur { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* En-tête */
+.entete {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(3, 47, 55, .92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+.entete .conteneur {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; height: 68px;
+}
+.marque { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--texte); }
+.marque img { width: 40px; height: 40px; border-radius: 50%; }
+.marque span { font-family: "Pixelify Sans", sans-serif; font-size: 22px; font-weight: 700; }
+.menu { display: flex; align-items: center; gap: 22px; }
+.menu a { color: var(--texte); text-decoration: none; font-weight: 700; font-size: 15px; }
+.menu a:hover { color: var(--or); }
+.menu .langue { border: 1px solid rgba(255, 255, 255, .25); border-radius: 999px; padding: 4px 12px; }
+
+/* Accueil */
+.accueil {
+    padding: 72px 0 64px;
+    background:
+        radial-gradient(ellipse at 75% 30%, rgba(255, 197, 61, .14), transparent 55%),
+        linear-gradient(180deg, var(--fond-2), var(--fond));
+}
+.accueil .conteneur { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+.accueil h1 { font-size: clamp(38px, 6vw, 64px); margin: 0 0 18px; }
+.accueil h1 em { font-style: normal; color: var(--or); }
+.accueil p.chapeau { font-size: 20px; color: var(--doux); margin: 0 0 28px; max-width: 34em; }
+.accueil .loro { width: min(420px, 100%); margin-left: auto; border-radius: 50%; box-shadow: 0 20px 60px rgba(0, 0, 0, .35); }
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; }
+.bouton {
+    display: inline-block; padding: 12px 22px; border-radius: 999px;
+    font-weight: 800; text-decoration: none;
+    background: var(--or); color: #2a1a00;
+}
+.bouton.second { background: transparent; color: var(--texte); border: 2px solid rgba(255, 255, 255, .3); }
+.bouton:hover { filter: brightness(1.08); }
+
+/* Sections */
+section { padding: 72px 0; }
+section h2 { font-size: clamp(30px, 4vw, 42px); margin: 0 0 8px; }
+section .intro { color: var(--doux); margin: 0 0 36px; max-width: 40em; }
+
+/* Jeux */
+.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.jeu {
+    background: var(--carte); border-radius: var(--rayon); overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .2);
+}
+.jeu img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+.jeu .corps { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.jeu h3 { font-family: "Nunito", system-ui, sans-serif; font-weight: 800; font-size: 23px; margin: 0; }
+.jeu p { margin: 0; color: var(--doux); font-size: 16px; }
+.etat {
+    align-self: flex-start; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em;
+    padding: 3px 10px; border-radius: 999px; background: rgba(255, 255, 255, .1); color: var(--texte);
+}
+.etat.dispo { background: #2fbf71; color: #062312; }
+.etat.bientot { background: var(--or); color: #2a1a00; }
+.liens { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 10px; }
+.liens a {
+    font-size: 14px; font-weight: 800; text-decoration: none; color: var(--texte);
+    border: 1px solid rgba(255, 255, 255, .25); border-radius: 999px; padding: 6px 14px;
+}
+.liens a:hover { border-color: var(--or); color: var(--or); }
+
+/* Studio */
+.studio { background: var(--fond-2); }
+.studio .conteneur { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; }
+.studio p { margin: 0 0 14px; }
+
+/* Suivre */
+.reseaux { display: flex; flex-wrap: wrap; gap: 12px; }
+.reseaux a {
+    background: var(--carte); color: var(--texte); text-decoration: none; font-weight: 800;
+    padding: 12px 20px; border-radius: 14px;
+}
+.reseaux a:hover { color: var(--or); }
+
+/* Pied de page */
+.pied { padding: 36px 0; border-top: 1px solid rgba(255, 255, 255, .08); color: var(--doux); font-size: 14px; }
+.pied .conteneur { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+@media (max-width: 820px) {
+    .menu a:not(.langue) { display: none; }
+    .accueil .conteneur, .studio .conteneur { grid-template-columns: 1fr; }
+    .accueil .loro { margin: 0 auto; width: 260px; }
+    section, .accueil { padding: 48px 0; }
+}
